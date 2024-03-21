@@ -2,8 +2,18 @@ h2{
     color:aqua  ;
 }
 p{
-    color:blueviolet
+    color:blueviolet;
 }
-h3{
-    color:brown
+.menu{
+    display: inline-block;/*deixa lado a lado */
+    padding:10px 20px;/*da espaço*/
+    background-color:aliceblue;
+    text-align:center;/*centraliza o texto*/
+    font-size: 16px;/*tamanho da fonte*/
+    border-radius:5px;/*Borda arredondada*/
+    border: none;
+
+}
+.menu:houver{
+     background-color:beige;
 }
