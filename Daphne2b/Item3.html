@@ -43,21 +43,33 @@
         <h1>Calculadora</h1>
     </header>
     <main>
-        <h2 id="DataHora"> Hora aparece aqui </h2>
-        <button type="button" class="btn btn-primary" onclick=atual() >Click aqui para saber a data e hora</button>
-        <script src="script.js">
-        </script> 
-        </main>
-        </body>
-        <p>
+        <script>
+            function atual() {
+                const now = new Date();
 
-        </p>
-         <div class="card" style="width: 18rem;">
-            <img src="img/relogio.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-text">Veja a hora, sempre que quiser</p>
-            </div>
-        </div>   
+                // Formatar a data e hora no formato brasileiro
+                const day = String(now.getDate()).padStart(2, '0');
+                const month = String(now.getMonth() + 1).padStart(2, '0'); // Meses começam do zero
+                const year = now.getFullYear();
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+                const seconds = String(now.getSeconds()).padStart(2, '0');
+
+                const formattedDateTime = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+
+                // Atualizar o conteúdo do elemento <h2> com o id "DataHora"
+                document.getElementById('DataHora').innerText = formattedDateTime;
+            }
+
+            // Configurar a atualização a cada segundo
+            setInterval(atual, 1000);
+
+  </script>
+      
+        <div class = "container my-5 text-center">
+            <h2 id="DataHora" class="sub"> Hora aqui </h2>
+        </div>
+        
         <section>
             <script src="calculadora.js" ></script>
              
@@ -141,8 +153,8 @@
     </main>
     
     
-    <footer>
-        Isso é o rodapé
+    <footer class = "btn btn-primary text-red text-center py-3">
+        &#169 Márcia Guedes - Daphne 2b
     </footer>
     
 </body>
